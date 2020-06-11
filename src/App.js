@@ -1,11 +1,14 @@
 import React from 'react';
 import './App.css';
-import { VisibleList } from './containers/VisibleList';
+import  VisibleList  from './containers/VisibleList';
+import  AddTodo from './containers/AddTodo';
 
 function App() {
   return (
-    <div> 
-      <VisibleList />         
+    <div className='app'> 
+      <AddTodo />  
+      <VisibleList />  
+     
     </div>
   );
 }

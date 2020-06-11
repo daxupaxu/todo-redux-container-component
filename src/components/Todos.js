@@ -1,24 +1,19 @@
 import Todo from './Todo';
 import React from 'react';
-import PropTypes from 'prop-types';
+import Footer from './Footer';
 
-const Todos = ({todos, toggleTodo}) => (  
-    <ul>
+const Todos = ({todos, toggleTodo, deleteTodo, showAll, showComplete, showActive}) => (
+  <div className='main'>  
+  
         {todos.map(todo => (
-            <Todo key={todo.id} {...todo} onClick = {() => toggleTodo(todo.id)} />
+            <Todo key={todo.id} {...todo} onClick = {() => toggleTodo(todo.id)} deleteTodo = {()=> deleteTodo(todo.id)}/>
         ))}
-    </ul>
+        <Footer 
+        showAll = {() => showAll()} 
+        showComplete = {() => showComplete()} 
+        showActive = {() => showActive()}/>
+  </div>
+ 
 )
-
-Todos.propTypes = {
-    todos: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.number.isRequired,
-        complete: PropTypes.bool.isRequired,
-        content: PropTypes.string.isRequired
-      }).isRequired
-    ).isRequired,
-    toggleTodo: PropTypes.func.isRequired
-  }
 
 export default Todos
