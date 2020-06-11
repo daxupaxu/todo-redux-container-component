@@ -1,5 +1,7 @@
 
-const todoReducer = (state = [{id:1, content:'asd', complete: false}], action) => {
+const initalState = []
+
+const todoReducer = (state = initalState, action) => {
     switch (action.type) {
         case 'ADD_TODO' : 
             return [
