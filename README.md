@@ -1,3 +1,3 @@
-#App done using React & Redux written in Container/Component Pattern
+# App done using React & Redux written in Container/Component Pattern
 
-#npm start
+# npm start
